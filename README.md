@@ -1,1 +1,1 @@
-# netcorerehberuygulamasi
+# netcorerehberuygulamasi 
