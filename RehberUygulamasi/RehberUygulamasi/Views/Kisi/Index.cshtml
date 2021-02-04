@@ -1,0 +1,37 @@
+﻿@model RehberUygulamasi.Models.KisiIndexModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Rehberim</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Email</th>
+        <th>Mail Gönder</th>
+        <th>Şehir</th>
+        <th>Güncelle | Detay | Sil</th>
+    </tr>
+    @foreach (var x in Model.Kisiler)
+    {
+        <tr>
+            <td>@x.Ad</td>
+            <td>@x.Soyad</td>
+            <td>@x.EmailAdres</td>
+            <td>@Html.ActionLink("Mail Gonder","MailGonder", new { id=x.Id})</td>
+            <td>@x.Sehir.SehirAdi</td>
+            <td>
+                @Html.ActionLink("Güncelle", "Guncelle", new { id = x.Id }) | @Html.ActionLink("Detay", "Detay", new { id = x.Id }) |
+                @Html.ActionLink("Sil","Sil",new { id = x.Id},new { onclick="return confirm('Kişiyi Silmek istediğinize Emin Misiniz?');"})
+            </td>
+        </tr>
+    }
+</table>
+
+<br />
+<a href="https://www.ridvanucdag.com">Rıdvan ÜÇDAĞ</a> |
+<a href="https://www.linkedin.com/in/ridvanucdag">Linkedin</a> |
+<a href="https://github.com/ridvanucdag">Github</a>

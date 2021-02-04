@@ -1,0 +1,41 @@
+﻿@model RehberUygulamasi.Models.KisiEkle
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Kişi Ekle</h1>
+
+<form class="form-group" method="post" action="/Kisi/Ekle/">
+    <div class="form-group">
+        @Html.LabelFor(x => x.Kisi.Ad)
+        @Html.TextBoxFor(x => x.Kisi.Ad, null, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x=>x.Kisi.Soyad)
+        @Html.TextBoxFor(x => x.Kisi.Soyad, null, new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x=>x.Kisi.EvTelefon)
+        @Html.TextBoxFor(x => x.Kisi.EvTelefon, null, new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x=>x.Kisi.IsTelefon)
+        @Html.TextBoxFor(x => x.Kisi.IsTelefon, null, new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x=>x.Kisi.EmailAdres)
+        @Html.TextBoxFor(x => x.Kisi.EmailAdres, null, new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x=>x.Kisi.Adres)
+        @Html.TextAreaFor(x => x.Kisi.Adres, 2, 1, new { @class="form-control", @rows = "3" })
+    </div>
+   <div class="form-group">
+       @Html.LabelFor(x => x.Kisi.SehirId)
+       @Html.DropDownListFor(x => x.Kisi.SehirId, new SelectList(Model.Sehirler, "Id", "SehirAdi"), new { @class = "form-control" })
+   </div>
+
+    <input type="submit" class="btn btn-primary" value="Kaydet" />
+</form>
+

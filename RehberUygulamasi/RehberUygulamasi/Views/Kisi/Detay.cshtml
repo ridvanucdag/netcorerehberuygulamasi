@@ -1,0 +1,25 @@
+﻿@model RehberUygulamasi.Models.KisiDetay
+@{
+    ViewData["Title"] = "Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1> @Model.Kisi.Ad @Model.Kisi.Soyad Bilgileri </h1>
+<hr />
+<dl class="dl-horizontal">
+    <dt>@Html.DisplayNameFor(x => x.Kisi.EvTelefon)</dt>
+    <dd>@Model.Kisi.EvTelefon</dd>
+
+    <dt>@Html.DisplayNameFor(x => x.Kisi.IsTelefon)</dt>
+    <dd>@Model.Kisi.IsTelefon</dd>
+
+    <dt>@Html.DisplayNameFor(x => x.Kisi.EmailAdres)</dt>
+    <dd>@Model.Kisi.EmailAdres</dd>
+
+    <dt>@Html.DisplayNameFor(x => x.Kisi.Adres)</dt>
+    <dd>@Model.Kisi.Adres</dd>
+
+    <dt>@Html.DisplayNameFor(x => x.Kisi.SehirId)</dt>
+    <dd>@Model.Kisi.Sehir.SehirAdi</dd>
+
+</dl>

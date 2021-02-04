@@ -1,0 +1,29 @@
+﻿@model RehberUygulamasi.Models.Kisi
+@{
+    ViewData["Title"] = "MailGonder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Model.Ad @Model.Soyad kişisine mail gönder</h1>
+
+<form action="/Kisi/MailGonder/" method="post">
+    <div class="form-group">
+        <label>Mail Adres</label>
+        <input type="text" class="form-control" value="@Model.EmailAdres" name="MailAdres" readonly />
+    </div>
+    <div class="form-group">
+        <label>Başlık</label>
+        <input type="text" class="form-control" name="Baslik" />
+    </div>
+    <div class="form-group">
+        <label>Mesaj</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" name="Mesaj" rows="3"></textarea>
+        
+    </div>
+    <button type="submit" class="btn btn-primary">Mail Gönder</button>
+</form>
+<br />
+<br />
+
+<label>KisiController kısmında, gönderilecek mail adresinin şifresi girilmediği için, mail gönderilemeyecektir.Mail gönderebilmeniz için, mail adresinizin şifresini girmeniz gerekmektedir.</label>
+

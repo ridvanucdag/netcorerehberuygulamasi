@@ -1,0 +1,47 @@
+﻿@model IEnumerable< RehberUygulamasi.Models.Sehir>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Şehir listemiz</h1>
+
+<p>
+    <a asp-action="Create">Yeni şehir Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.SehirAdi)*@
+                Şehir Adı
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.SehirKodu)*@
+                Şehir Kodu
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.SehirAdi)*@
+                    @x.SehirAdi
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.SehirKodu)*@
+                    @x.SehirKodu
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@x.Id">Güncelle</a> |
+                    <a asp-action="Details" asp-route-id="@x.Id">Detay</a> |
+                    <a asp-action="Delete" asp-route-id="@x.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
